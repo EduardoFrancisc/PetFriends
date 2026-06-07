@@ -3,8 +3,6 @@ package br.com.infnet.petFriends_almoxarifado.domain.model;
 import jakarta.persistence.Embeddable;
 import lombok.Data;
 
-import java.util.Objects;
-
 @Data
 @Embeddable
 public class ItemAlmoxarifado {
@@ -22,19 +20,5 @@ public class ItemAlmoxarifado {
 
         this.produtoId = produtoId;
         this.quantidade = quantidade;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ItemAlmoxarifado that = (ItemAlmoxarifado) o;
-        return Objects.equals(produtoId, that.produtoId) &&
-                Objects.equals(quantidade, that.quantidade);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(produtoId, quantidade);
     }
 }
